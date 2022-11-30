@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+    <link rel="stylesheet" href="index.css">
+	<title>
+		Drag and Drop
+	</title>
+	
+	<link href =
+"https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+			rel = "stylesheet">
+	
+	<script src =
+"https://code.jquery.com/jquery-1.10.2.js">
+	</script>
+	
+	<script src =
+"https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+	</script>
+		
+	<script>
+		$(function() {
+			$( "#imageListId" ).sortable({
+			update: function(event, ui) {
+				getIdsOfImages();
+			}		
+			});
+		});
+		
+		function getIdsOfImages() {
+			var values = [];
+			$('.listitemClass').each(function (index) {
+				values.push($(this).attr("id")
+						.replace("imageNo", ""));
+			});
+		}
+	</script>
+</head>
+	
+<body>
+	<h1><b>Drag and Drop</b></h1>
+	
+	<div class="height"></div><br>
+	
+	<div id = "imageListId">
+		<div id="imageNo1" class = "listitemClass">
+			<img src="./img1.jpeg" alt="">
+		</div>
+		
+		<div id="imageNo2" class = "listitemClass">
+			<img src="./img2.jpg" alt="">
+		</div>
+
+		<div id="imageNo3" class = "listitemClass">
+			<img src="./img3.jpeg" alt="">
+		</div>
+
+		<div id="imageNo4" class = "listitemClass">
+			<img src="./img4.jpeg" alt="">
+		</div>
+
+		<div id="imageNo5" class = "listitemClass">
+			<img src="./img5.jpeg" alt="">
+		</div>
+
+		<div id="imageNo6" class = "listitemClass">
+			<img src="./img6.jpeg" alt="">
+		</div>
+	</div>
+</body>
+
+</html>
